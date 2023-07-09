@@ -4,9 +4,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-function App() {
-  return (<h1>Root path!</h1>);
-}
+import App from './App';
 
 ReactDOM.render(
   <App/>,
