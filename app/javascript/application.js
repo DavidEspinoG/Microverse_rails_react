@@ -5,7 +5,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 function App() {
-  return (<h1>Hello React on Rails World!</h1>);
+  return (<h1>Root path!</h1>);
 }
 
 ReactDOM.render(
