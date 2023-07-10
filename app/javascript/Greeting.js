@@ -1,19 +1,23 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { fetchGreetings } from "./greetingSlice";
 
 function Greeting() {
   const dispatch = useDispatch();
-
-  useEffect(() => {
+  const greeting = useSelector(state => state.greeting)
+   useEffect(() => {
     dispatch(fetchGreetings());
-    console.log('use effect') 
-  })
+  }, [])
   return (
     <div>
       <Link to="/">Home</Link>
-      <p>Greeting</p>
+      <p>{greeting}</p>
+      <button
+        onClick={() => dispatch(fetchGreetings())}
+      >
+        Refresh
+      </button>
     </div>
   )
 };
